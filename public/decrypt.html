@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JavaScript RSA Encryption</title>
+    <!-- Compiled and minified CSS -->
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="js/bin/jsencrypt.min.js"></script>
+
+    <style type="text/css">
+
+
+
+    </style>
+    <script type="text/javascript">
+
+    // Decrypt with the private key...
+
+
+    function HandleFileSelect(evt)
+    {
+
+
+      var privateKey = document.getElementById( 'privkey' ).innerHTML;
+
+      email = 'dMW81qwwdtCMEmx9rGZpxHC0cCOABDRbMr7Rj0OOR4u4Nu5sSqnZ0LjKuKHJArxd1hReARe3cvcuwk6pebeJ034oi5RWA86UHhoaPH7tOgo/GfsdRgFNo6G153OclAmwUsnPgL7ll+WvhQgpSdQIf2bHO9jzbqZkRLhr7J/vXxTH8fyk2znOa43RJGwC6k0IIuWvWGemCrJMgR5qG3ah/GulanPz3pncfD/rAY0nPaAUKSKi32qCvpn4koEmtADLH4/Xvr2wsaeTzN6qzDd5/5278MygGleyX2NbmzADAwXsdXilM7uIlw3Wwp9g6Q+P9TCeIdIgUIckVIDbLLR5Tw==';
+      console.log(email);
+      var decrypt = new JSEncrypt();
+      decrypt.setPrivateKey(privateKey);
+      //Get file object
+      var decrypted = decrypt.decrypt( email );
+
+          // Now a simple check to see if the round-trip worked.
+
+      console.log( decrypted );
+      emailOutPut.innerHTML = '<h4>' + decrypted + '</h4>';
+
+
+
+
+
+    }
+
+    $( function()
+    {
+        $( "#FileUpload" ).change( HandleFileSelect );
+
+
+    });
+
+
+    // $(function()
+    // {
+    //
+    //       $('input[type=file]').parse({
+    // 	config: {
+    // 		// base config to use for each file
+    // 	},
+    // 	before: function(file, inputElem)
+    // 	{
+    // 		// executed before parsing each file begins;
+    // 		// what you return here controls the flow
+    //     console.log('FILE: ' + file );
+    //
+    // 	},
+    // 	error: function(err, file, inputElem, reason)
+    // 	{
+    // 		// executed if an error occurs while loading the file,
+    // 		// or if before callback aborted for some reason
+    // 	},
+    // 	complete: function()
+    // 	{
+    // 		// executed after all files are complete
+    // 	}
+    //   });
+    //
+    // }
+    // {
+
+
+
+      //
+      // // Call this code when the page is done loading.
+      // $(function()
+      // {
+      //     // Decrypt with the private key...
+      //     var decrypt = new JSEncrypt();
+      //     decrypt.setPrivateKey($('#privkey').val());
+      //
+      //
+      //     var decrypted = decrypt.decrypt(encrypted);
+      //
+      //     // Now a simple check to see if the round-trip worked.
+      //     if (decrypted == $('#input').val()) {
+      //       alert('It works!!!');
+      //     }
+      //     else {
+      //       alert('Something went wrong....');
+      //     }
+      //   });
+
+    </script>
+  </head>
+  <body>
+
+     <textarea style="display:none;" id="privkey" rows="15" cols="65">-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAyTKgdZ5jSftR2qhkPqQPibQK8CgEfNTB/4udYxF9pg36mf3C
+TfHVQWInyvTw4X9AWJbaFk7S0C/6Bwk4Q8Nx0RsFzwdfw7In95+3sP3HCqLCFLbt
+skYnkYe8Ck9z27lUEUpBYpZ51tn0QW8ftZ11bmPokFWwjKcakm8FdCE+qZNQEaWQ
+PoMYkibOPu2zORYOhT3FPNVBtitipx9I7fmZ07KynJYOhwpi6sMKjxJgwVmimxYs
+3uzGXWnh5qwkBKnABxTx2J0a1ZyMd/QZRLbdrJ+zqTqb7gCPDZBo8sW8yCXMIWNe
+JbLqYqGJ2DpM8TR9TnMdTGz6bGBZ0s5Nb/v0BQIDAQABAoIBAQCsOrdbGCO8f/PY
+7s8pRD28zi+S117IEUSkYbpvxNg/XrYIPk6ndH3uQ3z24uiUz96gNzonYIBcEMXC
+YiUU9OiobK5zQ8e5ePd3pPSVARjyxNLI8rLVKfLTRFM2rD7sd2A8kMkaAN/5iIfr
+v5lwWYLd5Y5+h6vjK2S2t2z+tTqz4047Kzfu48+C85tzbSOUaSk+uJe0PhsaXLyG
+KbEPa/TqEiLsEYwqYDiXrSl6YXAgxYYS9+vShmUHhbo+LuwqT0BkidNQR4NpBbsq
+br8XhC+J8pAgX0zgkNoUPWDewEj77oHUizxxnVvFLrK2Smbpr5JZlaQDWtHa51kD
+MgfEW2OBAoGBAPTMju6een5Sr9NamWOsySEcD5JVH2VlDhT4YUMjEUqn+Vc79UzY
+Ap6pvTQt64rc5UOiWuqrttPhSvZKFyHQ4TtmHdhG15ZNikwPGs0Wq5gxPbOiWn2c
+RL+zLFWQpEI0hzShaoyBsxkiAyQRxJ40+KYohwJn0F1A/S2LW5bpJTolAoGBANJn
+WMruQv3LkER4AWSQSjfqLHerMIblbaOaf7q5ELXVYQScou12oJ/x8ZXSSsJevaJD
+SiNKnUhqMW4E5o0mjqYh+sPKOUKU7NigxENuVpY1eoy+FNTUXr/t1udOik5KMNo+
+3Sp9yIz9My0zZFBotO3mR4aoU/+x2/9qcpgyq3xhAoGAVThtPda/8AAbI6nzokaB
+klwxc5DcqDDA8T3ypiusFmBZpivCXqkIaHHQ4zxlNmdmDOCVZAK5WBOjRBBQ8z3D
+WylWlHc9EB8YWRgdDW6p+AaUY1fOxtHDATV/5p2/ASlGNGVJMXbpgYNcso7Y8vaf
+5UBQl97KI9y/Br7v+J5bjl0CgYEAjiIiaXPq7WfGXXpz9mtCt+MJhw2uCnKSTiLg
+hlLeZvduQp9NsPyiJWpbuMoGlqdJk4PBYXXWKkUSfy/wTwns822g6QKDC+du2ChC
+bQrskywtTUZa7CtKln0k37y+0YRs3AH7hejSweuJ1s8QxQD2uH8Hcn/jvqd35mMS
+Zp5UGgECgYARCg3dfWz3qGxJchXbz/A4YslP9x8r40XsIrZ9tiiwLtk6QsbtGJ59
+ey/B5iehDwAs+2e00WSdLCT8y8EMPEwBh+Z/5DUCSekpUOoJgc+5sPyKdg/ZFUsf
+3x8Dox4O6bAqd5nDGB/9swiKJC3dcy561W+7VdkcJ5A9+UqTDrcebQ==
+-----END RSA PRIVATE KEY-----</textarea><br/>
+
+    <textarea style="display:none;" id="pubkey" rows="15" cols="65">-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlOJu6TyygqxfWT7eLtGDwajtN
+FOb9I5XRb6khyfD1Yt3YiCgQWMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76
+xFxdU6jE0NQ+Z+zEdhUTooNRaY5nZiu5PgDB0ED/ZKBUSLKL7eibMxZtMlUDHjm4
+gwQco1KRMDSmXSMkDwIDAQAB
+-----END PUBLIC KEY-----</textarea><br/>
+    <label for="input">:</label><br/>
+
+    <div class="row center">
+      <div class="col s10 offset-s1 m6 offset-m3 l6 offset-l3">
+        <h2>CSV Decrypt</h2>
+        <h5>At the moment it just decrypts and displays emails addresses</h5>
+      </div>
+    </div>
+
+
+    <div class="row"></div>
+
+    <br><br><br><br>
+    <br><br><br><br>
+
+    <div class="row center">
+      <div class="col s10 offset-s1 m6 offset-m3 l6 offset-l3">
+        <form action="#">
+       <div class="file-field input-field">
+         <div class="btn">
+           <span>File</span>
+           <input id="FileUpload" name="PrescriptionUpload" type="file" value ='' accept="text/csv" style="margin-left: 0em;">
+         </div>
+         <div class="file-path-wrapper">
+           <input class="file-path validate" type="text">
+         </div>
+       </div>
+     </form>
+      </div>
+      <br><br><br><br><br>
+      <br><br><br><br>
+      <div class="row">
+        <div class="col s10 offset-s1 m6 l6 offset-m3 offset-l3">
+          <div id="email">
+
+          </div>
+        </div>
+      </div>
+</div>
+
+
+    <!-- <input id="FileUpload" name="PrescriptionUpload" type="file" value ='' accept="text/csv" style="margin-left: 0em;"><br> -->
+
+
+
+  </body>
+</html>

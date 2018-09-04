@@ -1,0 +1,31 @@
+{
+  "name": "user_auth_with_passport",
+  "version": "1.0.0",
+  "description": "User Authentication with passport",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eoghan",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "crypto-js": "^3.1.9-1",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "jsonwebtoken": "^8.3.0",
+    "mongodb": "*",
+    "mongoose": "*",
+    "node-rsa": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "uuid": "^3.3.2"
+  }
+}
